@@ -22,3 +22,15 @@ $router->get('/', [
     'uses' => 'MainController@home' // uses : ou doit pointer ma route MonController@MaFonction
 ]);
 
+$router->get('/quiz/{id}', [
+    'as' => 'quiz', //as : definition du nom de la route
+    'uses' => 'QuizController@quiz' // uses : ou doit pointer ma route MonController@MaFonction
+]);
+
+$router->post('/quiz/{id}', [
+    'as' => 'quizPost', //as : definition du nom de la route
+    'uses' => 'QuizController@quizPost' // uses : ou doit pointer ma route MonController@MaFonction
+]);
+
+
+

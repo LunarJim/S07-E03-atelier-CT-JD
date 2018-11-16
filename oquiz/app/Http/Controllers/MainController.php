@@ -7,6 +7,14 @@ namespace App\Http\Controllers;
 /*
  Pour utiliser / recuperer l'objet Request je doit obligatoirement importer cette classe Lumen
 */
+
+use App\Answers;
+use App\App_users;
+use App\Levels;
+use App\Questions;
+use App\Quizzes;
+use App\Tags;
+
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -23,13 +31,12 @@ class MainController extends Controller
 
     public function home(Request $request){
 
-        // $videoGameList = JeuVideo::all();
+        $quizzList = Quizzes::all();
 
-        // $order = $request->input('order');
-        
-      
+        // dump($quizzList);
+
         return view('home', [
-         //   'maSuperListeDeJeu' => $videoGameList
+            'listeDesQuizzes' => $quizzList
         ]);
     }
 }
