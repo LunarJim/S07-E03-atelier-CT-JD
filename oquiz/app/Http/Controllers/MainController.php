@@ -33,7 +33,7 @@ class MainController extends Controller
 
         $quizzList = Quizzes::all();
 
-         dump($quizzList);
+        // dump($quizzList);
 
         return view('home', [
             'listeDesQuizzes' => $quizzList

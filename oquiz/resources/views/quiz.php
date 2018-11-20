@@ -7,9 +7,7 @@
             </div>
 
             <div class="row">
-                <h4> 
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
-                </h4>
+                <h4><?=  $donneesDuQuizParSonId->description ?></h4>
             </div>
 
             <div class="row">
@@ -25,7 +23,8 @@
                         <span class="badge badge-success float-right mt-2 mr-2">Débutant</span>
 
                         <div class="p-3 background-grey">
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr. ?
+                            <?=  $listeDesQuestionsPourLid->attributes->wiki ?>
+                            <!-- 'listeDesQuestionsPourLid' => $questionsForTheID, -->
                         </div>
 
                         <div class="p-3 question-answer-block">

@@ -32,35 +32,40 @@ class QuizController extends Controller
 
     /*
      Etape 3 : Je prepare les methodes associées dans mes routes dans le controller concerné 
-     je prepare egalement l'appel aux view que je créé dans la foulée
+     je prepare egalement l'appel aux views que je crée dans la foulée
     */
+
     public function quiz(Request $request){
 
         $quizzId = $request->id;
-        dump($quizzId);
+        // dump($quizzId);
 
         $quizzList = Quizzes::all();
         $questionsList = Questions::all();
         $answersList = Answers::all();
         $levelsList = Levels::all();
-        $tagsList = tags::all();
+        $tagsList = Tags::all();
+
+        $quizById = Quizzes::find($quizzId);
+        // dump($quizById);
+
+        // $questionsForTheID = Questions::select("SELECT * FROM 'questions'")::where("WHERE quizzes_id = $quizzId");
+        $questionsForTheID = Questions::where('quizzes_id', '=', $quizzId)->take(10)->get();
+        // $selectQuizById = Quizzes::select("SELECT FROM 'quizzes' WHERE id = $quizzId");
+
+            // $quizId = $quizzes_id;
+            // $questionsByQuizzId = Questions::find($quizId)
+            // dump($questionsByQuizzId);
 
 
-         // dump($questionsList);
+        // $questionsForTheID = Questions::find($quizzId);
+        // dump($quizzId);
+        dump($questionsForTheID);
+        // dump($questionsList);
+        dump($quizzList);
 
-         // $questionsForTheID = Questions::select("SELECT FROM 'questions' WHERE quizzes_id = $quizzId");
-         // $selectQuizById = Quizzes::select("SELECT FROM 'quizzes' WHERE id = $quizzId");
-
-         $quizById = Quizzes::find($quizzId);
-         dump($quizById);
-
-         //dump($questionsForTheID);
-         //dump($titleForTheID);
-
-         // https://laravel.com/docs/4.2/eloquent
-         
-
-       
+        // https://laravel.com/docs/4.2/eloquent
+        
         return view('quiz', [
             'quizzId' => $quizzId,
             'listeDesQuizzes' => $quizzList,
@@ -68,7 +73,7 @@ class QuizController extends Controller
             'listeDesAnswers' => $answersList,
             'listeDesLevels' => $levelsList,
             'listeDesTags' => $tagsList,
-          //  'listeDesQuestionsPourLid' => $questionsForTheID,
+            'listeDesQuestionsPourLid' => $questionsForTheID,
           //  'quizParId' => $selectQuizById,
             'donneesDuQuizParSonId' => $quizById
         ]);

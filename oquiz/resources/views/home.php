@@ -10,7 +10,6 @@
             </div>
 
             <div class="row">
-               
                 <?php foreach($listeDesQuizzes as $quizz): ?>
                     
                     <div class="col-sm-4">
@@ -21,12 +20,11 @@
                                 <p class="text-white">Christophe Hondelatte</p>
                             </a>
                         </div>
-                            
                     </div>
 
                 <?php endforeach; ?>
-
             </div>
+
         </main>
     </body>
 </html>
