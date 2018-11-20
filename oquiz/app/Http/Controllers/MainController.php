@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-// use App\JeuVideo;
-// use App\Platform;
 /*
  Pour utiliser / recuperer l'objet Request je doit obligatoirement importer cette classe Lumen
 */

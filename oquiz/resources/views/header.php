@@ -30,7 +30,7 @@
 
                 <ul class="nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link d-inline text-blue" href="#">
+                        <a class="nav-link d-inline text-blue" href="<?= route('home') ?>">
                         <h1 >O'Quiz</h1>
                         </a>
                     </li>
@@ -45,9 +45,16 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-blue" href="#">
-                            <i class="fas fa-user"></i>
-                            Mon compte
+                        <a class="nav-link text-blue" href="<?= route('inscription') ?>">
+                            <i class="fas fa-pen-nib"></i>
+                            Inscription
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-blue" href="<?= route('connexion') ?>">
+                            <i class="fas fa-beer"></i>
+                            Connexion
                         </a>
                     </li>
 

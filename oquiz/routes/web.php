@@ -32,5 +32,15 @@ $router->post('/quiz/{id}', [
     'uses' => 'QuizController@quizPost' // uses : ou doit pointer ma route MonController@MaFonction
 ]);
 
+$router->get('/signup', [
+    'as' => 'inscription', //as : definition du nom de la route
+    'uses' => 'UserController@signup' // uses : ou doit pointer ma route MonController@MaFonction
+]);
+
+$router->get('/signin', [
+    'as' => 'connexion', //as : definition du nom de la route
+    'uses' => 'UserController@signin' // uses : ou doit pointer ma route MonController@MaFonction
+]);
+
 
 

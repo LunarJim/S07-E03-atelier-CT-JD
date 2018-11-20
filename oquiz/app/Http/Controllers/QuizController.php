@@ -51,18 +51,9 @@ class QuizController extends Controller
 
         // $questionsForTheID = Questions::select("SELECT * FROM 'questions'")::where("WHERE quizzes_id = $quizzId");
         $questionsForTheID = Questions::where('quizzes_id', '=', $quizzId)->take(10)->get();
-        // $selectQuizById = Quizzes::select("SELECT FROM 'quizzes' WHERE id = $quizzId");
-
-            // $quizId = $quizzes_id;
-            // $questionsByQuizzId = Questions::find($quizId)
-            // dump($questionsByQuizzId);
-
-
-        // $questionsForTheID = Questions::find($quizzId);
-        // dump($quizzId);
-        dump($questionsForTheID);
-        // dump($questionsList);
-        dump($quizzList);
+       
+        // dump($questionsForTheID);
+        // dump($levelsList);
 
         // https://laravel.com/docs/4.2/eloquent
         
@@ -74,7 +65,6 @@ class QuizController extends Controller
             'listeDesLevels' => $levelsList,
             'listeDesTags' => $tagsList,
             'listeDesQuestionsPourLid' => $questionsForTheID,
-          //  'quizParId' => $selectQuizById,
             'donneesDuQuizParSonId' => $quizById
         ]);
     }
