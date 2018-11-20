@@ -14,11 +14,14 @@
                 <?php foreach($listeDesQuizzes as $quizz): ?>
                     
                     <div class="col-sm-4">
-                        <a href="<?= route('quiz', ['id' => $quizz->id]) ?>">
-                            <h3 class="text-blue"><?= $quizz->title ?></h3>
-                            <h5><?=$quizz->description ?></h5>
-                            <p>Christophe Hondelatte</p>
-                        </a>
+                        <div class="bg-info text-white rounded">
+                            <a class="text-center" href="<?= route('quiz', ['id' => $quizz->id])?>">
+                                <h3 class="text-white"><?= $quizz->title ?></h3>
+                                <h5 class="text-white"><?=$quizz->description ?></h5>
+                                <p class="text-white">Christophe Hondelatte</p>
+                            </a>
+                        </div>
+                            
                     </div>
 
                 <?php endforeach; ?>

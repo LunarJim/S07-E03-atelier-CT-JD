@@ -18,6 +18,8 @@ Class Questions extends Model {
     */
     protected $table = 'questions';
 
+    
+    }
     /*
      Par defaut, à l'insertion en DB Luemen / Eloquent va essayer d'enregistrer dans une table qui est censé contenir 2 champs supplementaire
      updated_at & created_at (ce qui est une bonne pratique).
@@ -26,4 +28,4 @@ Class Questions extends Model {
     */
     // public $timestamps = false; 
 
-}
+

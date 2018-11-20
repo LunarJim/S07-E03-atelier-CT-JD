@@ -1,7 +1,7 @@
 <?= view('header') ?>
 
             <div class="row">
-                <h2> Le chocolat - I 
+                <h2> <?=  $donneesDuQuizParSonId->title ?>
                     <span class="badge badge-pill badge-secondary">xx questions</span>
                 </h2>
             </div>
