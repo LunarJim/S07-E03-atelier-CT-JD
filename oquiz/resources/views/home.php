@@ -13,11 +13,15 @@
                 <?php foreach($listeDesQuizzes as $quizz): ?>
                     
                     <div class="col-sm-4">
-                        <div class="bg-info text-white rounded">
-                            <a class="text-center" href="<?= route('quiz', ['id' => $quizz->id])?>">
-                                <h3 class="text-white"><?= $quizz->title ?></h3>
+                        <div class="m-3 p-2 btn-info text-white rounded">
+                            <a class="text-center" style="text-decoration:none" href="<?= route('quiz', ['id' => $quizz->id])?>">
+                                <h3 class="text-white text-uppercase font-weight-bold h4"><?= $quizz->title ?></h3>
                                 <h5 class="text-white"><?=$quizz->description ?></h5>
-                                <p class="text-white">Christophe Hondelatte</p>
+                                <?php foreach($listeDesUsers as $user): ?>
+                                    <p class="mb-0 text-white font-italic">
+                                        <?= $displayUser = $quizz->app_users_id == $user->id ? $user->firstname.' '.$user->lastname : '' ?>
+                                    </p>
+                                <?php endforeach; ?>
                             </a>
                         </div>
                     </div>

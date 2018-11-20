@@ -45,6 +45,9 @@ class QuizController extends Controller
         $answersList = Answers::all();
         $levelsList = Levels::all();
         $tagsList = Tags::all();
+        $usersList = App_users::all();
+
+        // dump($usersList);
 
         $quizById = Quizzes::find($quizzId);
         // dump($quizById);
@@ -64,6 +67,7 @@ class QuizController extends Controller
             'listeDesAnswers' => $answersList,
             'listeDesLevels' => $levelsList,
             'listeDesTags' => $tagsList,
+            'listeDesUsers' => $usersList,
             'listeDesQuestionsPourLid' => $questionsForTheID,
             'donneesDuQuizParSonId' => $quizById
         ]);

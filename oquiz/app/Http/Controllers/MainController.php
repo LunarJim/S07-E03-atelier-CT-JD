@@ -30,11 +30,14 @@ class MainController extends Controller
     public function home(Request $request){
 
         $quizzList = Quizzes::all();
+        $usersList = App_users::all();
 
+        // dump($usersList);
         // dump($quizzList);
 
         return view('home', [
-            'listeDesQuizzes' => $quizzList
+            'listeDesQuizzes' => $quizzList,
+            'listeDesUsers' => $usersList
         ]);
     }
 }

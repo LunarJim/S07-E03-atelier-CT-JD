@@ -2,7 +2,7 @@
 
             <div class="row">
                 <h2> <?=  $donneesDuQuizParSonId->title ?>
-                    <span class="badge badge-pill badge-secondary">xx questions</span>
+                    <span class="badge badge-pill badge-secondary">10 questions</span>
                 </h2>
             </div>
 
@@ -10,12 +10,22 @@
                 <h4><?=  $donneesDuQuizParSonId->description ?></h4>
             </div>
 
-            <div class="row">
-                <!-- <//?php foreach($listeDesUsers as $user): ?>
-                    <p class="text-white"><//?= $displayUser = $quizz->app_users_id == $user->id ? $user->firstname : null ?></p>
-                <//?php endforeach; ?> -->
+            <div class="pb-5 row font-italic">
+                <?php foreach($listeDesUsers as $user): ?>
+                    <?php
+                        switch ($user->id) {
+                            case 0:
+                                echo $listeDesUsers[0]->firstname.' '.$listeDesUsers[0]->lastname;
+                                break;
+                            case 1:
+                                echo $listeDesUsers[1]->firstname.' '.$listeDesUsers[1]->lastname;
+                                break;
+                        }
+                    ?>
+                <?php endforeach; ?>
             </div>
             
+
             <form action="" method="">
 
                 <div class="row">
