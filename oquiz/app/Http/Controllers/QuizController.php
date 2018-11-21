@@ -7,7 +7,7 @@ namespace App\Http\Controllers;
 */
 
 use App\Answers;
-use App\App_users;
+use App\AppUsers;
 use App\Levels;
 use App\Questions;
 use App\Quizzes;
@@ -45,7 +45,7 @@ class QuizController extends Controller
         $answersList = Answers::all();
         $levelsList = Levels::all();
         $tagsList = Tags::all();
-        $usersList = App_users::all();
+        $usersList = AppUsers::all();
 
         // dump($usersList);
 
@@ -58,6 +58,22 @@ class QuizController extends Controller
         // dump($questionsForTheID);
         // dump($levelsList);
 
+        $AnswersForTheID = [];
+
+        foreach($questionsForTheID as $question){
+            /*  shuffle fonction utile de l'objet Illuminate\Database\Eloquent\Collection retourné  par Eloquent : https://laravel.com/docs/5.7/collections#method-shuffle
+            Il était possible aussi d'effectuer un shuffle en methode native de php
+            */
+            
+            $answers = Answers::where('questions_id', '=', $question->id)->get()->shuffle();
+
+            //on attribue les reponses melangée pour chaque id
+            $AnswersForTheID[$question->id]= $answers;
+        
+        }
+
+        // dump($AnswersForTheID);
+
         // https://laravel.com/docs/4.2/eloquent
         
         return view('quiz', [
@@ -65,6 +81,7 @@ class QuizController extends Controller
             'listeDesQuizzes' => $quizzList,
             'listeDesQuestions' => $questionsList,
             'listeDesAnswers' => $answersList,
+            'listeDesAnswersPourLid' => $AnswersForTheID,
             'listeDesLevels' => $levelsList,
             'listeDesTags' => $tagsList,
             'listeDesUsers' => $usersList,

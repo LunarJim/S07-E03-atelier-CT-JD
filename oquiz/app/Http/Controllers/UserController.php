@@ -7,7 +7,7 @@ namespace App\Http\Controllers;
 */
 
 // use App\Answers;
-// use App\App_users;
+// use App\AppUsers;
 // use App\Levels;
 // use App\Questions;
 // use App\Quizzes;
