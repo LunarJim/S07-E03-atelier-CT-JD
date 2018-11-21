@@ -50,7 +50,7 @@
 
                             <div class="p-3 font-weight-bold alert-secondary">
                                 <?= $questions->question;
-                                //dump($questions) ?>
+                                // dump($questions) ?>
                             </div>
 
                             <div class="p-3 question-answer-block">
@@ -100,51 +100,61 @@
                                     </div>
                                 <?php endforeach; ?>
                             </div>
-                            
+
+                            <details>
+                            <summary>Spoiler</summary>
+                                <div class="p-3 background-grey question-answer-block"> 
+                                    <?= $questions->anecdote ?>
+                                    <a href="<?= 'https://fr.wikipedia.org/wiki/'.$questions->wiki ?>">Wikipedia</a>
+                                </div>
+                            </details>
+
                         </div>
                     <?php endforeach; ?>
                     
-                    <div class="col-sm-3 offset-sm-1 border p-0">
+                    <!-- <div class="col-sm-3 offset-sm-1 border p-0">
 
-                            <span class="badge badge-success float-right mt-2 mr-2">Débutant</span>
-    
-                            <div class="p-3 alert-warning">
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr. ?
-                            </div>
-                            <div class="p-3 question-answer-block">
-    
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                                    <label class="form-check-label" for="exampleRadios1">
-                                            Lorem ipsum 
-                                    </label> 
-                                </div>
-    
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                    <label class="form-check-label" for="exampleRadios2">
-                                            Lorem ipsum 
-                                    </label> 
-                                </div>
-    
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option2">
-                                    <label class="form-check-label" for="exampleRadios3">
-                                            Lorem ipsum 
-                                    </label> 
-                                </div>
+                        <span class="badge badge-success float-right mt-2 mr-2">Débutant</span>
+
+                        <div class="p-3 alert-warning">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr. ?
+                        </div>
+                        <div class="p-3 question-answer-block">
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                                <label class="form-check-label" for="exampleRadios1">
+                                        Lorem ipsum 
+                                </label> 
                             </div>
 
-                            <div class="p-3 background-grey question-answer-block"> 
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr. [...]
-                                    <a href="#">Wikipedia</a>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                        Lorem ipsum 
+                                </label> 
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option2">
+                                <label class="form-check-label" for="exampleRadios3">
+                                        Lorem ipsum 
+                                </label> 
                             </div>
                         </div>
+
+                        <div class="p-3 background-grey question-answer-block"> 
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr. [...]
+                                <a href="#">Wikipedia</a>
+                        </div>
+                    </div> -->
                     
                 </div>
-                <div class="row mt-3">
+
+                <div class="row mt-4 mb-5">
                     <input type="submit" class="btn btn-primary background-blue btn-lg btn-block" value="OK"/>
                 </div>
+
             </form>
         </main>
     </body>
