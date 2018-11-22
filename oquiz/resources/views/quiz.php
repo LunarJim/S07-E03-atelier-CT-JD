@@ -2,7 +2,7 @@
 
             <div class="row">
                 <h2> <?=  $donneesDuQuizParSonId->title ?>
-                    <span class="badge badge-pill badge-secondary">10 questions</span>
+                    <span class="badge badge-pill badge-secondary"><?=  $listeDesQuestionsPourLid->count() ?> questions</span>
                 </h2>
             </div>
 
